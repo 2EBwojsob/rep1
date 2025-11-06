@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Myślenice — Beskid Wyspowy</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #177426;
+      --muted: #93a3b8;
+      --glass: rgba(255,255,255,0.03);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      color: #e6eef8;
+      background: linear-gradient(180deg, #071021 0%, #0b1630 100%);
+    }
+    header {
+      padding: 28px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo .mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #046101);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #081020;
+      font-weight: 700;
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    main {
+      max-width: 1100px;
+      margin: 18px auto;
+      padding: 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      background: var(--glass);
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+    .tab {
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--muted);
+      background: transparent;
+    }
+    .tab.active {
+      background: linear-gradient(90deg, rgba(255,122,89,0.12), rgba(255,122,89,0.06));
+      color: #fff;
+      box-shadow: inset 0 -2px 0 rgba(255,122,89,0.12);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 18px;
+    }
+    .panel {
+      padding: 14px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+      width: 100%;
+    }
+    @media (max-width: 880px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+    .photo {
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--card);
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+    .photo img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      max-height: 50vw;
+      display: block;
+      object-fit: cover;
+    }
+    aside.card {
+      height: 100%;
+    }
+    .stats {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .stat {
+      background: var(--glass);
+      padding: 10px;
+      border-radius: 8px;
+      flex: 1;
+      min-width: 120px;
+    }
+    footer {
+      margin: 18px auto;
+      max-width: 1100px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 12px;
+    }
+    @media (max-width: 880px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .brand p {
+        display: none;
+      }
+      .logo .mark {
+        width: 42px;
+        height: 42px;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      main {
+        padding: 8px;
+      }
+      .card, .panel, aside.card {
+        padding: 10px;
+      }
+    }
+    @media (max-width: 500px) {
+      header {
+        flex-direction: column;
+        gap: 6px;
+        padding: 14px 6px;
+      }
+      .brand h1 {
+        font-size: 16px;
+      }
+      .gallery {
+        gap: 4px;
+      }
+      .photo {
+        min-height: 80px;
+      }
+      footer {
+        font-size: 11px;
+        padding: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="mark">MY</div>
+      <div class="brand">
+        <h1>Myślenice</h1>
+        <p>Serce Beskidu Wyspowego</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="tabs" role="tablist" aria-label="Zakładki">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="panoramy">Panoramy i widoki</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="szlaki">Szlaki / przyroda</button>
+      </div>
+
+      <div class="grid">
+        <section class="panel" id="content">
+          <article id="panoramy" class="tabpanel">
+            <h2>Panoramy Beskidu Wyspowego</h2>
+            <p class="muted">Beskid Wyspowy — pasmo gór z wyraźnymi „wyspowymi” szczytami.</p>
+            <p>Wybrane miejsca warte uwagi:</p>
+            <ul>
+              <li><strong>Mogielica</strong> — panorama z wieżą.</li>
+              <li><strong>Ćwilin</strong> — widoki stąd rozciągają się szeroko.</li>
+              <li><strong>Szczyty Kamionna / Modynia</strong> — ciekawe perspektywy.</li>
+            </ul>
+            <div class="gallery">
+              <div class="photo"><img src="images/img1.jpg" alt="Panorama Beskidu"></div>
+              <div class="photo"><img src="images/img2.jpg" alt="Widok gór"></div>
+              <div class="photo"><img src="images/img3.jpg" alt="Las i panoramy"></div>
+              <div class="photo"><img src="images/img4.jpg" alt="Krajobraz beskidzki"></div>
+            </div>
+          </article>
+
+          <article id="szlaki" class="tabpanel" style="display:none">
+            <h2>Szlaki, przyroda i historie</h2>
+            <p class="muted">Tu znajdziesz lasy, bukowe grzbiety, źródełka i lokalne opowieści.</p>
+            <p>Co można zobaczyć:</p>
+            <ul>
+              <li>śnieżne ścieżki leśne i polany</li>
+              <li>punkty widokowe na trasach</li>
+              <li>elementy kultury lokalnej — kapliczki, schroniska</li>
+            </ul>
+            <div class="gallery">
+              <div class="photo"><img src="images/img1.jpg" alt="Panorama gór"></div>
+              <div class="photo"><img src="images/img2.jpg" alt="Widok lasu"></div>
+              <div class="photo"><img src="images/img3.jpg" alt="Góry w oddali"></div>
+              <div class="photo"><img src="images/img4.jpg" alt="Krajobraz beskidzki"></div>
+            </div>
+            <p class="muted" style="margin-top:12px">Zalecenie: miej dobrą pogodę, mapę i wodę — niektóre odcinki są odsłonięte.</p>
+          </article>
+        </section>
+
+        <aside class="card">
+          <h3>O Myślenicach</h3>
+          <p class="muted">Podstawowa baza wypadowa w Beskid Wyspowy.</p>
+          <div class="stats">
+            <div class="stat"><strong>Najwyższy szczyt:</strong><div class="muted">Mogielica (1170 m)</div></div>
+            <div class="stat"><strong>Charakter terenu:</strong><div class="muted">Wyspowe wzgórza, lasy, polany</div></div>
+          </div>
+          <h4 style="margin-top:14px">Linki przydatne</h4>
+          <ul class="muted">
+            <li><a href="https://mapa-turystyczna.pl/" target="_blank">Mapa szlaków</a></li>
+            <li><a href="https://myslenice.pl/" target="_blank">Informacje turystyczne Myślenice</a></li>
+            <li><a href="https://www.google.com/maps/search/restauracje+Myślenice/" target="_blank">Restauracje w okolicy</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+
+    <footer>
+      © Myślenice — przewodnik wizualny. Strona demo.
+    </footer>
+  </main>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const panes = document.querySelectorAll('.tabpanel');
+    tabs.forEach(t => t.addEventListener('click', () => {
+      tabs.forEach(x => {
+        x.classList.remove('active');
+        x.setAttribute('aria-selected', 'false');
+      });
+      t.classList.add('active');
+      t.setAttribute('aria-selected', 'true');
+      const id = t.dataset.tab;
+      panes.forEach(p => {
+        p.id === id ? p.style.display = 'block' : p.style.display = 'none';
+      });
+    }));
+  </script>
+</body>
+</html>
